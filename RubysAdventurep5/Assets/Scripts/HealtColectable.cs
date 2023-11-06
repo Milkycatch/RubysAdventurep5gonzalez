@@ -9,8 +9,12 @@ public class HealtColectable : MonoBehaviour
         RubyController controller = other.GetComponent<RubyController>();
         if (controller != null)
         {
-            controller.ChangeHealth(1);
-            Destroy(gameObject);
+            if(controller.health < controller.maxhealt)
+            {
+                controller.ChangeHealth(1);
+                Destroy(gameObject);
+            }
+           
         }
         Debug.Log("Object that entered  the tiggerr  is:" + other);
     }
