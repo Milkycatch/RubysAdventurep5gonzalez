@@ -19,7 +19,7 @@ public class RubyController : MonoBehaviour
     float vertical;
 
     Animator animator;
-    Vector2 lookDirection = new Vector2 (1,0);
+    Vector2 lookDirection = new Vector2 (1, 0);
 
     // Start is called before the first frame update
     void Start()
@@ -42,8 +42,8 @@ public class RubyController : MonoBehaviour
             lookDirection.Set(move.x, move.y);
             lookDirection.Normalize();
         }
-        animator.SetFloat("look X",lookDirection.x);
-        animator.SetFloat("look Y",lookDirection.y);
+        animator.SetFloat("Look X",lookDirection.x);
+        animator.SetFloat("Look Y",lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
 
         if (isInvincible)
