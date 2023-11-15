@@ -6,8 +6,13 @@ using UnityEngine;
 public class RubyController : MonoBehaviour
 {
     public float speed = 3.0f;
+    
     public int maxhealt = 5;
+
+    public GameObject projectilePrefab;  
+
     public float timeInvincible = 2;
+
     public int health { get { return currentHealt; } }
     int currentHealt;
 
@@ -54,6 +59,10 @@ public class RubyController : MonoBehaviour
                 isInvincible = false;
             }
         }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Launch();
+        }
     }
     private void FixedUpdate()
     {
@@ -78,5 +87,15 @@ public class RubyController : MonoBehaviour
         }
         currentHealt = Mathf.Clamp(currentHealt + amount, 0, maxhealt);
         Debug.Log(currentHealt + "/" + maxhealt);
+    }
+    void Launch()
+    {
+        GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up *0.5f, Quaternion.identity);
+
+        projectile projectile = projectileObject.GetComponent < projectile>();
+
+        projectile.Launch(lookDirection, 300);
+
+        animator.SetTrigger("Launch");
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1570944305248406374}
   - component: {fileID: 4771167970221665998}
   - component: {fileID: 7509215313656264261}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ruby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   maxhealt: 5
+  projectilePrefab: {fileID: 3409920505703181344, guid: a4a10d9e5ad6c9243883c4d2305397da, type: 3}
   timeInvincible: 2
 --- !u!50 &1570944305248406374
 Rigidbody2D:
