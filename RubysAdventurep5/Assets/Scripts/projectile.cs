@@ -5,6 +5,7 @@ using UnityEngine;
 public class projectic : MonoBehaviour
 {
     Rigidbody2D rigidbody2d;
+    
     // Start is called before the first frame update
     void Awake()
     {
