@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealtColectable : MonoBehaviour
 {
+    public AudioClip collectedClip;
     void  OnTriggerEnter2D(Collider2D other)
     { 
         RubyController controller = other.GetComponent<RubyController>();
@@ -13,9 +14,11 @@ public class HealtColectable : MonoBehaviour
             {
                 controller.ChangeHealth(1);
                 Destroy(gameObject);
+
+                controller.PlaySound(collectedClip);
             }
            
         }
-        Debug.Log("Object that entered  the tiggerr  is:" + other);
+        
     }
 }
